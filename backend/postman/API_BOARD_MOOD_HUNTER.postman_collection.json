@@ -1,0 +1,172 @@
+{
+  "info": {
+    "_postman_id": "c49ca6f9-78d8-4074-9cc2-5267abacf859",
+    "name": "API_BOARD_MOOD_HUNTER",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "25457397"
+  },
+  "item": [
+    {
+      "name": "get_requests",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/api/requests",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "requests"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "move_request",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"to\": \"paused\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/requests/7/transitions",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "requests",
+            "7",
+            "transitions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get_transitions",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/api/requests/7/transitions",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "requests",
+            "7",
+            "transitions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get_history",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/api/requests/7/history",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "requests",
+            "7",
+            "history"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "generate_summary",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/api/requests/8/summary",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "requests",
+            "8",
+            "summary"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update_request",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "// {\n//   \"title\": \"Lavar la Losa\",\n//   \"description\": \"Lavar la losa mañana en la mañana\"\n// }\n\n{\n    \"title\": \"Lavar la Ropa\",\n   \"description\": \"Lavar la losa mañana en la mañana ...\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/requests/8",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "requests",
+            "8"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "create_request Copy",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Lavar la Losa\",\n  \"description\": \"Lavar la losa mañana en la mañana\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/api/requests",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "requests"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

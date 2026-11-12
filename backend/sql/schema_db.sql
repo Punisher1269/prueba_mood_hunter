@@ -7,7 +7,7 @@ CREATE DATABASE IF NOT EXISTS mood_board
   CHARACTER SET utf8mb4
   COLLATE utf8mb4_unicode_ci;
 
-USE mood_bord;
+USE mood_board;
 
 -- Se borran en orden inverso a sus dependencias
 DROP TABLE IF EXISTS request_events;

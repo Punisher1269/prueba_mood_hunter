@@ -5,6 +5,8 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
+from routers import requests_router, statuses_router
+from services.exceptions import ServiceError
 from settings import settings
 from settings.db import engine, verificar_conexion
 
@@ -19,8 +21,8 @@ async def lifespan(app: FastAPI):
 
     
 app = FastAPI(
-    title="API de Alarmas",
-    description="Importación, clasificación por criticidad y resumen de alarmas",
+    title="API Tablero de Solicitudes",
+    description="Solicitudes con flujo de estados, historial y resumen con IA",
     version="1.0.0",
     lifespan=lifespan
 )
@@ -34,6 +36,11 @@ app.add_middleware(
 )
 
 
+@app.exception_handler(ServiceError)
+async def service_error_handler(request: Request, exc: ServiceError) -> JSONResponse:
+    # Mismo formato que FastAPI ({"detail": "..."}), que es lo que lee el front
+    return JSONResponse(status_code=exc.status_code, content={"detail": exc.message})
+
 
 @app.get("/")
 async def root():
@@ -44,8 +51,8 @@ async def root():
 def health():
     return {"status": "ok"}
 
-# Ruter de alarmas
-# app.include_router(alarmas_router.router, tags=["Alertas"], prefix="/alarmas")
+app.include_router(requests_router.router, tags=["Requests"], prefix="/api")
+app.include_router(statuses_router.router, tags=["Statuses"], prefix="/api")
 
 
 if __name__ == "__main__":

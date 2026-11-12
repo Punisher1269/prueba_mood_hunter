@@ -66,6 +66,10 @@ export function transitionRequest(id, to) {
   return request(`/api/requests/${encodeURIComponent(id)}/transitions`, { method: 'POST', body: { to } });
 }
 
+export function getTransitions(id) {
+  return request(`/api/requests/${encodeURIComponent(id)}/transitions`);
+}
+
 export function getHistory(id) {
   return request(`/api/requests/${encodeURIComponent(id)}/history`);
 }

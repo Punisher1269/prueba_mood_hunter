@@ -1,5 +1,5 @@
 from .config import settings
 
-__alla__ = [
+__all__ = [
     "settings"
 ]

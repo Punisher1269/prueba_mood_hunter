@@ -22,6 +22,11 @@ class Settings(BaseSettings):
     db_password: str
     db_name: str
 
+    # LLM (resumen con IA). Sin key la app arranca, pero /summary responde 503.
+    openai_api_key: str | None = None
+    openai_model: str = "gpt-4o-mini"
+    llm_timeout_s: float = 12.0  # menor que los 15 s que espera el front
+
     @property
     def database_url(self) -> str:
         password = quote_plus(self.db_password)
