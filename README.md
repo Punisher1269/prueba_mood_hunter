@@ -150,7 +150,7 @@ frontend/src/
 
 ## 6. Uso de IA
 
-- **Claude (chat):** investigación de cómo manejan los estados Jira, Notion y GitHub; construcción del front paso a paso, entendiendo cada concepto nuevo para mí (componentes, estado derivado, actualización optimista, arrastrar y soltar); diseño de la base de datos y del contrato de la API.
+- **Claude (chat):** investigación de cómo maneja la logica de los estados Jira, Notion y GitHub; construcción del front paso a paso, entendiendo cada concepto (componentes, estado derivado, actualización optimista, arrastrar y soltar); diseño de la base de datos y del contrato de la API.
 - **Claude Code:** se generó la implementación base del back a partir del diseño ya definido. Luego revisé el código servicio por servicio y lo ajusté a lo que necesitaba.
 - **Decisiones:** implementación del historial, resumen manual por solicitud, modal de detalle, diseño visual.
 - **En la app:** los resúmenes los genera OpenAI.
